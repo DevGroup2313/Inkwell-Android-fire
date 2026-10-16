@@ -1,0 +1,9 @@
+# build outputs and the fetched llama.cpp source
+.gradle/
+build/
+app/build/
+app/.cxx/
+app/src/main/cpp/llama.cpp/
+local.properties
+# the signing key never goes into a public repository
+signing/

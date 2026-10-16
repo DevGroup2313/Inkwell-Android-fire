@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+}
+
+// The signing key: every build is signed the same way, so each new APK
+// installs OVER the previous one and keeps your documents. It is read from
+// signing/inkwell.jks with signing/signing.properties, which live in a
+// PRIVATE repository, or, in a public one, are written by the workflow from
+// the repository's secrets just before the build (see build-apk.yml). With
+// neither, the build is signed with the Android test key: that APK installs
+// on a tablet with no Inkwell, but never over an Inkwell signed with the
+// real key, so the documents on the tablet are never at risk.
+def signingProps = new Properties()
+def signingFile = rootProject.file('signing/signing.properties')
+def keystoreFile = rootProject.file('signing/inkwell.jks')
+def hasInkwellKey = signingFile.exists() && keystoreFile.exists()
+if (hasInkwellKey) {
+    signingFile.withInputStream { signingProps.load(it) }
+} else {
+    logger.warn('Inkwell: no signing/inkwell.jks with signing/signing.properties; signing with the Android test key (this APK will not install over an Inkwell signed with the real key).')
+}
+// Each GitHub build gets a higher version code, so Android accepts it as an update.
+def runNumber = Integer.parseInt(System.getenv('GITHUB_RUN_NUMBER') ?: '0')
+
+android {
+    namespace 'studio.inkwell.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'studio.inkwell.app'
+        minSdk 24
+        targetSdk 34
+        versionCode 74200 + runNumber
+        versionName '7.42'
+
+        // 7.35: the tablet's writing model (llama.cpp), built for 64-bit ARM
+        // tablets (the release); the test build adds the 64-bit x86 emulator
+        externalNativeBuild {
+            cmake {
+                arguments '-DCMAKE_BUILD_TYPE=Release', '-DANDROID_STL=c++_shared'
+            }
+        }
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+            version '3.22.1'
+        }
+    }
+
+    // the engine finds its processor variants as files in the app's native
+    // library folder, so the libraries are unpacked on install
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    signingConfigs {
+        inkwell {
+            storeFile rootProject.file('signing/inkwell.jks')
+            storePassword signingProps.getProperty('storePassword')
+            keyAlias signingProps.getProperty('keyAlias')
+            keyPassword signingProps.getProperty('keyPassword')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig hasInkwellKey ? signingConfigs.inkwell : signingConfigs.debug
+            ndk {
+                abiFilters 'arm64-v8a'
+            }
+        }
+        debug {
+            signingConfig hasInkwellKey ? signingConfigs.inkwell : signingConfigs.debug
+            ndk {
+                abiFilters 'arm64-v8a', 'x86_64'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // This app is installed by hand, not through a store; store-policy lint
+    // checks must not stop the build.
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test:core:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}

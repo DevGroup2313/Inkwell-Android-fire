@@ -1,0 +1,237 @@
+INKWELL 7.42 FOR THE FIRE TABLET (ANDROID)
+==========================================
+
+THIS PACKAGE HOLDS: Inkwell-7.42-build1.apk, the app itself, built and
+signed with Inkwell's own key, so it installs over the Inkwell already on
+the tablet and keeps your documents.
+NOT FOR: iPhone or iPad (an iPhone or iPad cannot open an .apk file).
+
+
+INSTALL ON THE FIRE TABLET BY USB
+---------------------------------
+1. Unzip this package on your computer.
+2. On the tablet: Settings, Security & Privacy, Apps from Unknown Sources:
+   allow the Files app. (You did this once already if Inkwell is on the
+   tablet; the wording may differ slightly between Fire OS versions.)
+3. Connect the tablet to the computer with its USB cable. If the tablet asks
+   what the connection is for, choose "File transfer". Windows shows the
+   tablet in File Explorer. A Mac needs a separate file transfer app for
+   Android devices.
+4. Copy the .apk into the tablet's "Download" folder.
+5. On the tablet: open Files, then Downloads, tap the .apk, then Install
+   (or Update).
+6. Open Inkwell. Look for "v7.42" beside the date at the top.
+
+
+YOUR DOCUMENTS
+--------------
+- Installing a new APK over the old one keeps your documents, because every
+  build is signed with the same key.
+- From 7.40, Inkwell also keeps copies of your whole library by itself, in
+  the app's own folder on the tablet: File, Earlier copies.
+- Uninstalling the app deletes everything on the tablet, copies included.
+  To move documents to another device: File, Move the library to another
+  device.
+
+
+NEW IN 7.42
+-----------
+- Inkwell catches more mistakes offline, with no model: the errors people
+  make most when writing English (he go, they was, didn't knew, enjoy to
+  play, by use, many student, every students, in future, married with, in
+  Monday, infront, and the commas left out after "If you want a car" or
+  "In my opinion"). Measured on learner essays: half again as many errors
+  found, at the same precision; one correct sentence in twenty touched.
+- Every note now offers something to do: a fix, a few wordings to try, or
+  a question whose answer builds the new sentence ("Who did it?" turns a
+  passive sentence active). Notes on words already right are gone, and two
+  notes on one place are one. Every note has a lesson of its own kind.
+- Clarity and style notes are shown from the start (hide them with one
+  button if you want only correctness).
+- The web app's tab icon follows the theme: the night seal in dark mode.
+- An iPhone or iPad with no app can open Inkwell from the Mac mini itself:
+  on the Mac mini, Studio ▸ Engine ▸ Share; on the phone, Safari at
+  http://<the address shown>/ and the six-digit code once in Engine.
+- The writing model's download (web app) keeps its progress on the pill,
+  and a failed download says why in plain words.
+
+NEW IN 7.41
+-----------
+- The Mac app is small enough to come straight in the chat again (under
+  30 MB). The program that runs the models inside the page (Scriba's
+  transcription and speakers, the grammar model) is fetched once, the first
+  time one of them runs, when that model downloads itself anyway. It is
+  checked against its fingerprint and kept, so it then works offline.
+- The Mac app has the new seal as its icon.
+- The web app shows the seal in the browser tab, and as the picture when you
+  send its link.
+
+NEW IN 7.40
+-----------
+- Inkwell keeps your library safe by itself. There is nothing to export,
+  no reminder, and no file on your Desktop. It copies your whole library
+  (the desk, Tabula, Fontes, and Scriba's transcripts) when it opens, every
+  ten minutes while you work, and when you put it away. File, Earlier
+  copies brings back any earlier day, and can itself be undone. If Inkwell
+  ever opens with its storage emptied, it puts your library back by itself.
+- A file is used only to move your library to another device: File, Move
+  the library to another device. The file now carries every room, and
+  opening it adds what is new without replacing anything.
+- Sticky notes have the 3D look of Carpe Diem and the Forge again (the
+  bevel, the pop, and handles on every edge and corner), in Inkwell's own
+  shades: Foolscap, Gilt, Lapis, Claret, Laurel and Vespers.
+- A computer linked over Wi-Fi that has no writing model loaded now says
+  so ("computer linked, no model loaded"). Its simple fallback rules are no
+  longer shown as a model's writing.
+
+
+CORRECTIONS AND MODELS ON THIS DEVICE (7.35 AND LATER)
+------------------------------------------------------
+- Since 7.35 the Fire tablet runs a writing model of its own, offline:
+  Engine, "Writing model on this tablet". It is LFM2.5 1.2B Instruct
+  (Liquid AI), downloaded once (about 730 MB), then kept on the tablet.
+  It runs in a separate process, so if Fire OS needs the memory back it
+  closes the model, never your page. Measured behind Inkwell's safety
+  filter: 37% of learner sentences improved, 3% made worse, 3% of correct
+  sentences changed.
+- The tablet's own model comes first everywhere; your laptop's model
+  (below) is second, unless you choose it first in Engine.
+- Without a model, corrections come from the rules engine, offline; it
+  shows only correctness unless you press "Show clarity and style notes".
+- Every rewrite is checked: one that drops a citation or number, or adds a
+  name, is marked in red with exactly what it changed.
+- Cite (Insert, Citation): the same engine and styles Zotero uses (APA,
+  Harvard, Chicago, OSCOLA, MHRA, MLA, IEEE, Nature), offline. Adding a
+  source by DOI or ISBN needs the internet; BibTeX, RIS and CSL-JSON do not.
+
+NEW IN 7.36: SPELLING, AND A CAREFUL GRAMMAR MODEL (OPTIONAL)
+-------------------------------------------------------------
+- A dictionary spelling checker now runs on this device, offline, with
+  suggestions and "Add to dictionary" (switch: Studio, Rules).
+- Engine, "Turn on the grammar model" (about 124 MB, once): it reads each
+  paragraph as you pause and adds suggestions; nothing changes unless you
+  accept. Only its reliable kinds are shown (agreement, articles,
+  prepositions, spelling, verb forms). Measured: 80% to 86% of its
+  suggestions match a human corrector's; on a 5,486-word thesis it
+  suggested nothing.
+- Coach menu: an authorship report, and "Grade against a rubric".
+
+
+NEW IN 7.36: SCRIBA, LIKE CAPTION.ED, OFFLINE
+--------------------------------------------
+Scriba (the microphone room) now works on a recording the way Caption.Ed
+does. Open a recording (or "Import audio or video") and press Transcribe:
+- Playback and editing: the transcript follows the sound; a time plays from
+  there; every paragraph can be corrected in place; search; exports as
+  text, Word, SRT or WebVTT subtitles, or straight into Inkwell's document.
+- Notes and highlights: Important, Question, Action, Revisit; a note on
+  any moment; a scratchpad; slides from a PDF or photos of the board.
+- Your words: names and terms spelled your way in every transcript, and a
+  switch that removes "um", "uh" and "er".
+- Speakers: name them by hand, or press "Find the speakers". This runs on
+  the device with two small open models (about 33 MB, fetched once with
+  the internet, then offline). Measured on recorded meetings: about 85% of
+  speech lands in a paragraph naming the right person, about 95% when the
+  speakers are found before transcribing (Scriba then starts a new
+  paragraph where the speaker changes). The number of speakers is often
+  wrong on short recordings; check the names, and give two speakers the
+  same name to join them. Details: tools/speakers/README.md.
+- Summarise: a summary with chapters, action items, meeting minutes,
+  revision notes with questions, or your own prompt. These come from the
+  writing model Inkwell is running on your devices; none is sent anywhere
+  else. Any name or number the transcript does not contain is marked so
+  you can check it. With the small tablet model the summaries are short
+  and plain, and they repeat the speech model's mishearings.
+
+
+YOUR COMPUTER'S MODEL
+---------------------
+- Stronger rewriting and drafting come from a computer over the same
+  Wi-Fi: the Mac mini, or a laptop. On the computer (Inkwell for Mac or
+  Windows): Engine, "Share with my other devices on this Wi-Fi"; it shows
+  an address and a 6-digit code. Inkwell must stay open there. On this
+  device: Engine, "Your computer's model": enter both, then "Connect to my
+  computer".
+
+
+
+APPENDIX: BUILDING THE APK YOURSELF ON GITHUB
+---------------------------------------------
+This is for when GitHub Actions works again (it has not started since
+10 October; the APK in this package was built without it). The project is
+in the private repository; these were the steps.
+
+PART A. PUT THE PROJECT ON GITHUB (ONCE)
+----------------------------------------
+1. Sign in at github.com. Top right: "+", then "New repository".
+   Name it, for example, inkwell-fire. Choose PRIVATE: this package holds the
+   app's signing key (the folder "signing"), which must not be public.
+   Leave every other option as it is. Press "Create repository".
+
+2. Unzip this package on your computer. Open the folder inside it.
+
+3. Make hidden files visible, so the folder ".github" can be seen:
+     Windows: File Explorer, View, Show, Hidden items.
+     Mac: in Finder press Cmd + Shift + full stop.
+
+4. On the new repository's page, click "uploading an existing file".
+   Select EVERYTHING inside the package folder (the folders .github, app and
+   signing, and every file beside them) and drag it all onto the page.
+   Drag the CONTENTS, not the package folder itself.
+   Wait until every file is listed, then press "Commit changes".
+
+5. Check the repository's main page. It must show, at the top level:
+     .github   app   signing   build.gradle   settings.gradle   gradle.properties
+   If "app" sits inside another folder, see "Problems" below: the build still
+   works, because it finds the project wherever it is.
+   If ".github" is missing, the uploader skipped it (it often does). Then:
+     Add file, Create new file. As the name, type exactly:
+        .github/workflows/build-apk.yml
+     Open "WORKFLOW build-apk.yml (copy).txt" from this package, copy ALL of
+     its text, paste it into the big box, and press "Commit changes".
+
+
+PART B. BUILD THE APK
+---------------------
+6. Open the "Actions" tab of the repository. A run called
+   "Build Inkwell for Android" starts by itself after each commit. If none
+   is running, click "Build Inkwell for Android" on the left, then
+   "Run workflow", then the green "Run workflow" button.
+   If GitHub asks you to enable Actions, enable them.
+
+7. Wait for the green tick (about 2 minutes; the first run can take longer).
+
+8. On the repository's main page, open "Releases" (right-hand side). The
+   newest release, "Inkwell 7.41 (build N)", has the APK under "Assets".
+
+
+PART E. UPDATING INKWELL LATER
+------------------------------
+- New Inkwell page: upload the new Inkwell.html into app/src/main/assets/
+  (replace the old one). If the vendor files changed, upload those into
+  app/src/main/assets/vendor/.
+- New version number: in app/build.gradle, change versionName '7.41'.
+  (versionCode rises by itself with every build, so Android accepts each
+  build as an update.)
+- New icon: replace the five ic_launcher.png files in app/src/main/res/
+  (48, 72, 96, 144 and 192 pixels square). "artwork/inkwell-seal-1024.png" is
+  the seal with transparent corners, to make them from.
+- Every commit starts a new build; install its APK as in Part C.
+
+
+PROBLEMS
+--------
+- No run appears in Actions: the workflow file is missing. Do step 5 again.
+- "Directory ... does not contain a Gradle build": the workflow could not find
+  settings.gradle. Check that app, build.gradle, settings.gradle and
+  gradle.properties were all uploaded, side by side in one folder.
+- "No settings.gradle in this repository": the same cause.
+- A red step called "Publish a release": in the repository, Settings, Actions,
+  General, Workflow permissions: choose "Read and write permissions", Save,
+  and run the workflow again.
+- Any other red step: open it, read its last lines; the full log is attached
+  to the run as "build-log".
+- The tablet refuses to install over the old app ("App not installed"): the
+  new APK was signed with a different key. Use the same "signing" folder as
+  before, or uninstall and install the new APK (uninstalling deletes the documents on
+  the tablet, so move them first: File, Move the library to another device).
